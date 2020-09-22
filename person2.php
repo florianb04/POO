@@ -6,6 +6,8 @@ class Person // creation de la classe (bluePrint)
         public $lastName;
         public $age;
 
+        const TETE = 1;
+
 
         protected static $totalCount = 0 ;
 
@@ -21,7 +23,7 @@ class Person // creation de la classe (bluePrint)
         {
             return static::$totalCount;
         }
-
+    
     }   
 
 $person1 = new Person;
@@ -29,8 +31,10 @@ $person2 = new Person;
 $person3 = new Person;
 
 // façon d'acceder avec le :: aux propriétes static de la class
-echo Person::getTotalCount();
+echo Person::getTotalCount().'<br>';
 
+// acceder à une constante
+echo Person::TETE.'<br>';
 
 
 
