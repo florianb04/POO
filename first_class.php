@@ -18,6 +18,12 @@ class Person // creation de la classe (bluePrint)
         {
             echo $this->firstName.' est en train de danser </br>';
         }
+
+        public function fullName ()
+        {
+            return $this->firstName.' '.$this->lastName.'</br>';
+        }
+
     }   
 
 // instantiation 'eric' de la classe Person  
@@ -30,6 +36,7 @@ echo $prof1->lastName.'</br>';
 echo $prof1->age.'</br>';
 
 $prof1->danser();
+echo $prof1->fullName();
 
 
 $prof2 = new Person ('Mamadou','Sall',36); 
