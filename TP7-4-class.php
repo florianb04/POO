@@ -11,11 +11,11 @@ class Form {
     protected $closeForm ;
 
 
-//<form> & <fieldset>
+//<form> & <fieldset> pour l'en tete du formulaire ainsi que sa cloture 
     public function __construct($action ,$methode="POST",$legende)
     {
         $this->codeInit = '<form action="'.$action.'" methode="'.$methode.'">';
-        $this->codeInit .= '<fieldset><legende><b>'.$legende.'</b></legende></br>';
+        $this->codeInit .= '<fieldset><legende><b>'.$legende.'</b></legende></br></br>';
 
         $this->closeForm = '</fieldset></form>';
 
@@ -26,15 +26,15 @@ class Form {
 // settext()  HTML ajoute une zone de texte
     public function setText ($name,$libelle){
 
-        $this->codeText .= '<input type="text" name="'.$name.'" placeholder="'.$libelle.'"/></br>' ;
+        $this->codeText .= '<input type="text" name="'.$name.'" placeholder="'.$libelle.'"/></br></br>' ;
 
     }
 
 
 // setsubmit() HTML ajoute un bouton d’envoi
-    public function setSubmit ($name){
+    public function setSubmit ($name,$value){
 
-        $this->codeBtn .= '<input type="submit" name="'.$name.'" /></br>' ;
+        $this->codeBtn = '<input type="submit" name="'.$name.'" value="'.$value.'" /></br></br>' ;
 
     }
 
