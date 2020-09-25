@@ -1,6 +1,6 @@
 <?php 
 
-class Personne {
+class Person {
 
 
     protected $nom ;
@@ -15,8 +15,13 @@ class Personne {
         $this->adresse = $adresse ;
     }
 
+    public function __destruct()
+    {
+        echo $this->nom.' '.$this->prenom.' est suprimé </br>' ;
+    }
 
-    public function getPersonne (){
+
+    public function getPerson (){
 
         return $this->nom.' '.$this->prenom.' habite à : '.$this->adresse.'</br>' ;
 
@@ -31,13 +36,20 @@ class Personne {
 
 }
 
-$toto = new Personne('Toto','DeLaFontaine','Nice');
+$toto = new Person('DeLaFontaine','Toto','Nice');
 
-echo $toto->getPersonne();
+echo $toto->getPerson();
 
 $toto->setAdresse('Paris'); 
 
-echo $toto->getPersonne();
+echo $toto->getPerson();
+
+// l'objet se détruit automatiquemennt dès qu'il n'est plus utiliser dans la suite du code
+// UNSET($toto);
+
+// echo $toto->getPerson();
+
+
 
 
 
